@@ -1,4 +1,4 @@
-  name: Octokit v4 Backport
+  name: Backport
 
   on:
     pull_request:
