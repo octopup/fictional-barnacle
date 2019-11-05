@@ -13,8 +13,6 @@
       - uses: hmharvey/act-on-label@master
         with:
           labels: 'backport'
-      - uses: unsplash/comment-on-pr@master
+      - uses: hmharvey/cherry-pick-pr@master
         env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-           msg: "It worked!"
