@@ -19,7 +19,7 @@
       - uses: hmharvey/cherry-pick-pr@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: echo "output env ${{ env.OUTPUT_BRANCH_NAME }} or ${{ output.branch_name }}"
+      - run: echo "output env ${{ env.OUTPUT_BRANCH_NAME }} or ${{ outputs.branch_name }}"
       - uses: repo-sync/pull-request@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
