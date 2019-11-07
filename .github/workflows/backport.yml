@@ -13,6 +13,12 @@
       - uses: hmharvey/act-on-label@master
         with:
           labels: 'backport'
+      - uses: actions/checkout@v1.1.0
+        with:
+          ref: 'stable-branch' 
       - uses: hmharvey/cherry-pick-pr@master
         env:
-           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: repo-sync/pull-request@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
