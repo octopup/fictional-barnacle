@@ -14,8 +14,6 @@
         with:
           labels: 'backport'
       - uses: actions/checkout@v1.1.0
-        with:
-          ref: 'stable-branch' 
       - uses: hmharvey/cherry-pick-pr@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -23,4 +21,3 @@
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           destination_branch: 'stable-branch'
-          pr_title: "Backport ${{ github.ref }} into stable-branch"
