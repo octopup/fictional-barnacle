@@ -22,3 +22,5 @@
       - uses: repo-sync/pull-request@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          destination_branch: 'stable-branch'
+          pr_title: "Backport ${{ github.ref }} into stable-branch"
