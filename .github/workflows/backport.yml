@@ -16,10 +16,11 @@
       - uses: actions/checkout@v1.1.0
         with:
           ref: 'stable-branch'
-      - uses: hmharvey/cherry-pick-pr@master
+      - id: cherry-pick
+        uses: hmharvey/cherry-pick-pr@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: echo "output env ${{ env.OUTPUT_BRANCH_NAME }} or ${{ outputs.branch_name }}"
+      - run: echo "output env ${{ env.OUTPUT_BRANCH_NAME }} or ${{ steps.cherry-pick.outputs.branch_name }}"
       - uses: repo-sync/pull-request@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
