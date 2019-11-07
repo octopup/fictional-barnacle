@@ -20,8 +20,8 @@
         uses: hmharvey/cherry-pick-pr@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: echo "output env ${{ env.OUTPUT_BRANCH_NAME }} or ${{ steps.cherry-pick.outputs.branch_name }}"
       - uses: repo-sync/pull-request@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          source_branch: ${{ steps.cherry-pick.outputs.branch_name }}
           destination_branch: 'stable-branch'
